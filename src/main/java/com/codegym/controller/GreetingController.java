@@ -5,6 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.HashMap;
+import java.util.Map;
+
 @Controller
 public class GreetingController {
     @GetMapping("/")
@@ -24,8 +27,23 @@ public class GreetingController {
     }
 
     @GetMapping("/money")
-    public String Money(Model model,@RequestParam double usd ) {
+    public String Money(Model model,@RequestParam Long usd ) {
+        model.addAttribute("usd",usd);
         model.addAttribute("money",usd*23000);
         return "money";
+    }
+    @GetMapping("/dictionary")
+    public String Dictionary(Model model,@RequestParam String keyword ) {
+        Map<String,String> stringMap = new HashMap<>();
+        stringMap.put("hello","xinchao");
+        stringMap.put("hi","chào");
+        for (int i = 0 ; i<stringMap.size();i++) {
+            if (i == 0) {
+                model.addAttribute("translation", "Không tìm thấy bản dịch");
+            }else {
+                model.addAttribute("translation",stringMap.get(keyword));
+            }
+        }
+        return "dictionary";
     }
 }

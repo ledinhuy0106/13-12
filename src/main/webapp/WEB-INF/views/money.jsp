@@ -11,8 +11,8 @@
     <title>Title</title>
 </head>
 <body>
-<script>
-    alert(${money}+"VND")
-</script>
+<h1>
+${usd}USD = ${money}VND
+</h1>
 </body>
 </html>

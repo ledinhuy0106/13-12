@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>USD</title>
+  <title></title>
 </head>
 <body>
-<form action="/money">
-  <input type="text" name="usd" placeholder="USD">
-  <button>Đổi</button>
+<form action="/dictionary">
+  <input type="text" name = "keyword" placeholder="Nhập từ muốn dịch">
+  <button>Xem bản dịch</button>
 </form>
 </body>
 </html>
